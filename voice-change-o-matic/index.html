@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Voice-change-O-matic</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice-change-O-matic</title>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Righteous|Nova+Square"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link href="styles/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="styles/app.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Voice-change-O-matic</h1>
-      </header>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Righteous|Nova+Square"
+    rel="stylesheet"
+    type="text/css"
+  />
+
+  <!-- Stylesheets -->
+  <link href="styles/normalize.css" rel="stylesheet" type="text/css" />
+  <link href="styles/app.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <h1>Voice-change-O-matic</h1>
+    </header>
+
+    <main>
+      <!-- Canvas for visualizer -->
       <canvas class="visualizer" width="640" height="100"></canvas>
 
+      <!-- Controls Form -->
       <form class="controls">
         <div>
           <label for="voice">Voice setting</label>
@@ -45,44 +53,38 @@
           <a class="mute">Mute</a>
         </div>
       </form>
-    </div>
+    </main>
+  </div>
 
-    <label for="toggle">❔</label>
-    <input type="checkbox" id="toggle" />
-    <aside>
-      <h2>Information</h2>
+  <!-- Information Toggle -->
+  <label for="toggle">❔</label>
+  <input type="checkbox" id="toggle" />
 
-      <p>Voice-change-O-matic is built using:</p>
+  <!-- Information Section -->
+  <aside>
+    <h2>Information</h2>
+    <p>Voice-change-O-matic is built using:</p>
+    <ul>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator.getUserMedia">
+          getUserMedia
+        </a>, which is currently supported in Firefox, Opera (desktop/mobile) and
+        Chrome (desktop only). Firefox requires no prefix; the others require
+        <code>webkit</code> prefixes.
+      </li>
+      <li>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API">
+          Web Audio API
+        </a>, which is currently supported in Firefox, Chrome, Safari
+        (desktop/mobile) and Opera (desktop only). Firefox and Opera require
+        no prefix; Chrome requires <code>webkit</code> prefixes.
+      </li>
+    </ul>
+    <button id="install-btn">Install app</button>
+  </aside>
 
-      <ul>
-        <li>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator.getUserMedia"
-            >getUserMedia</a
-          >, which is currently supported in Firefox, Opera (desktop/mobile) and
-          Chrome (desktop only.) Firefox requires no prefix; the others require
-          <code>webkit</code> prefixes.
-        </li>
-
-        <li>
-          <a
-            href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API"
-            >Web Audio API</a
-          >, which is currently supported in Firefox, Chrome, Safari
-          (desktop/mobile) and Opera (desktop only). Firefox and Opera require
-          no prefix; Chrome requires <code>webkit</code> prefixes.
-        </li>
-      </ul>
-
-      <button id="install-btn">Install app</button>
-    </aside>
-
-    <!-- The following element pulls in the script for the default template functionality -->
-
-    <script src="scripts/install.js"></script>
-
-    <!-- Below is your custom application script -->
-
-    <script src="scripts/app.js"></script>
-  </body>
+  <!-- JavaScript -->
+  <script src="scripts/install.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
 </html>
