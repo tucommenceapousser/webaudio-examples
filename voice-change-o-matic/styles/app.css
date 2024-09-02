@@ -10,7 +10,7 @@ html {
 body {
   width: 100%;
   height: inherit;
-  background-color: #999;
+  background-color: black; /* Changer en noir pour plus de contraste */
   background-image: url(../images/pattern.png);
 }
 
@@ -20,8 +20,8 @@ label {
   font-size: 3rem;
   font-family: "Nova Square", cursive;
   text-align: center;
-  color: black;
-  text-shadow: -1px -1px 1px #aaa, 0px 1px 1px rgba(255, 255, 255, 0.5),
+  color: #ff6600; /* Orange fluo */
+  text-shadow: -1px -1px 1px #000, 0px 1px 1px rgba(255, 255, 255, 0.5),
     1px 1px 2px rgba(255, 255, 255, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.4);
   margin: 0;
 }
@@ -44,14 +44,14 @@ header {
 }
 
 canvas {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #ff6600; /* Orange fluo */
+  border-bottom: 1px solid #ff6600; /* Orange fluo */
   margin-bottom: -3px;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.7), 0 3px 4px rgba(0, 0, 0, 0.7);
 }
 
 .controls {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.8); /* Noir avec transparence */
   height: calc(100% - 225px);
 }
 
@@ -73,22 +73,25 @@ canvas {
   text-align: center;
   line-height: 3rem;
   padding: 1rem 0;
+  color: #00ff00; /* Vert fluo */
 }
 
 .controls select {
   width: 80%;
   font-size: 2rem;
+  color: #000; /* Noir */
+  background-color: #ff0; /* Jaune fluo */
 }
 
 /* || button styling */
 
 button,
 form a {
-  background-color: #0088cc;
-  background-image: linear-gradient(to bottom, #0088cc 0%, #0055cc 100%);
+  background-color: #00ffcc; /* Bleu fluo */
+  background-image: linear-gradient(to bottom, #00ffcc 0%, #00aaff 100%);
   text-shadow: 1px 1px 1px black;
   text-align: center;
-  color: white;
+  color: black; /* Noir pour le contraste */
   border: none;
   width: 90%;
   margin: 1rem auto 0.5rem;
@@ -113,7 +116,7 @@ form a:active {
 
 a#activated {
   background-color: #fff;
-  background-image: linear-gradient(to bottom, #f00 0%, #a06 100%);
+  background-image: linear-gradient(to bottom, #ff0000 0%, #aa0000 100%);
 }
 
 /* || Checkbox hack to control information box display */
@@ -143,7 +146,7 @@ aside {
   height: 100%;
   transform: translateX(100%);
   transition: 0.6s all;
-  background-color: #999;
+  background-color: black; /* Noir */
   background-image: linear-gradient(
     to top right,
     rgba(0, 0, 0, 0),
@@ -156,7 +159,7 @@ aside li {
   font-size: 1.6rem;
   line-height: 1.3;
   padding: 0rem 2rem 1rem;
-  color: white;
+  color: #00ff00; /* Vert fluo */
 }
 
 aside li {
@@ -172,7 +175,7 @@ input[type="checkbox"]:checked ~ aside {
 /* || Link styles */
 
 a {
-  color: #aaa;
+  color: #ff6600; /* Orange fluo */
 }
 
 a:hover,
@@ -200,7 +203,7 @@ a:focus {
     text-shadow: 1px 1px 1px black;
     width: 480px;
     transform: translateX(0);
-    border-left: 2px solid black;
+    border-left: 2px solid #ff6600; /* Orange fluo */
   }
 
   /* Toggled State of information box */
