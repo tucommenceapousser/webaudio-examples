@@ -1,218 +1,154 @@
-/* || General layout rules for narrow screens */
-
+/* General Layout */
 html {
   height: 100%;
-  font-family: "Righteous", cursive;
+  font-family: 'Press Start 2P', cursive; /* Typographie inspirée des jeux rétro */
   font-size: 10px;
-  background-color: black;
+  background-color: #000; /* Fond noir */
 }
 
 body {
   width: 100%;
   height: inherit;
-  background-color: black; /* Changer en noir pour plus de contraste */
-  background-image: url(../images/pattern.png);
-}
-
-h1,
-h2,
-label {
-  font-size: 3rem;
-  font-family: "Nova Square", cursive;
-  text-align: center;
-  color: #ff6600; /* Orange fluo */
-  text-shadow: -1px -1px 1px #000, 0px 1px 1px rgba(255, 255, 255, 0.5),
-    1px 1px 2px rgba(255, 255, 255, 0.7), 0px 0px 2px rgba(255, 255, 255, 0.4);
   margin: 0;
-}
-
-h1 {
-  font-size: 3.5rem;
-  padding-top: 1.2rem;
+  color: #0f0; /* Texte vert fluo */
+  background-color: #000;
 }
 
 .wrapper {
   height: 100%;
   max-width: 800px;
   margin: 0 auto;
+  padding: 1rem;
 }
 
-/* || main UI sections */
-
+/* Header Styles */
 header {
-  height: 120px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-canvas {
-  border-top: 1px solid #ff6600; /* Orange fluo */
-  border-bottom: 1px solid #ff6600; /* Orange fluo */
-  margin-bottom: -3px;
-  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.7), 0 3px 4px rgba(0, 0, 0, 0.7);
+header h1 {
+  color: #ff6600; /* Orange fluo */
+  font-family: 'Nova Square', cursive;
+  font-size: 4rem;
+  text-shadow: 0 0 10px #ff6600; /* Effet lumineux */
 }
 
+.developer {
+  font-size: 1.5rem;
+  color: #00ffcc; /* Bleu fluo */
+}
+
+/* Main Styles */
+main {
+  text-align: center;
+}
+
+canvas.visualizer {
+  border: 2px solid #00ffcc; /* Bleu fluo */
+  background-color: #000;
+}
+
+/* Controls Form */
 .controls {
-  background-color: rgba(0, 0, 0, 0.8); /* Noir avec transparence */
-  height: calc(100% - 225px);
-}
-
-/* || select element styling */
-
-.controls div {
-  width: 100%;
-  padding-top: 1rem;
-}
-
-.controls label,
-.controls select {
-  display: block;
-  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 1rem;
+  border-radius: 5px;
 }
 
 .controls label {
-  width: 100%;
-  text-align: center;
-  line-height: 3rem;
-  padding: 1rem 0;
-  color: #00ff00; /* Vert fluo */
+  color: #ff6600; /* Orange fluo */
 }
 
 .controls select {
-  width: 80%;
-  font-size: 2rem;
-  color: #000; /* Noir */
   background-color: #ff0; /* Jaune fluo */
+  color: #000;
 }
 
-/* || button styling */
-
-button,
-form a {
+/* Mute Button */
+.mute {
+  display: inline-block;
   background-color: #00ffcc; /* Bleu fluo */
-  background-image: linear-gradient(to bottom, #00ffcc 0%, #00aaff 100%);
-  text-shadow: 1px 1px 1px black;
-  text-align: center;
-  color: black; /* Noir pour le contraste */
-  border: none;
-  width: 90%;
-  margin: 1rem auto 0.5rem;
-  max-width: 80%;
+  color: #000;
+  padding: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
   font-size: 1.6rem;
-  line-height: 3rem;
-  padding: 0.5rem;
-  display: block;
 }
 
-button:hover,
-button:focus,
-form a:hover,
-form a:focus {
-  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.7);
-}
-
-button:active,
-form a:active {
-  box-shadow: inset 2px 2px 3px rgba(0, 0, 0, 0.7);
-}
-
-a#activated {
-  background-color: #fff;
-  background-image: linear-gradient(to bottom, #ff0000 0%, #aa0000 100%);
-}
-
-/* || Checkbox hack to control information box display */
-
-label[for="toggle"] {
-  font-family: "NotoColorEmoji";
-  font-size: 3rem;
+/* Information Toggle */
+.info-toggle {
   position: absolute;
-  top: 4px;
-  right: 5px;
-  z-index: 5;
+  top: 10px;
+  right: 10px;
+  font-size: 2rem;
   cursor: pointer;
+  color: #ff6600; /* Orange fluo */
 }
 
-input[type="checkbox"] {
-  position: absolute;
-  top: -100px;
-}
-
+/* Information Section */
 aside {
   position: fixed;
   top: 0;
   left: 0;
-  padding-top: 1.5rem;
-  text-shadow: 1px 1px 1px black;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #00ffcc; /* Bleu fluo */
   transform: translateX(100%);
-  transition: 0.6s all;
-  background-color: black; /* Noir */
-  background-image: linear-gradient(
-    to top right,
-    rgba(0, 0, 0, 0),
-    rgba(0, 0, 0, 0.5)
-  );
+  transition: transform 0.6s ease;
+  padding: 2rem;
+  box-shadow: 0 0 10px #00ffcc; /* Effet lumineux */
 }
 
-aside p,
-aside li {
+aside h2 {
+  color: #ff6600; /* Orange fluo */
+}
+
+aside a {
+  color: #ff6600; /* Orange fluo */
+}
+
+aside button {
+  background-color: #ff6600; /* Orange fluo */
+  color: #000;
+  border: none;
+  padding: 1rem;
   font-size: 1.6rem;
-  line-height: 1.3;
-  padding: 0rem 2rem 1rem;
-  color: #00ff00; /* Vert fluo */
+  cursor: pointer;
 }
 
-aside li {
-  padding-left: 10px;
-}
-
-/* Toggled State of information box */
-
-input[type="checkbox"]:checked ~ aside {
+aside input[type="checkbox"]:checked ~ aside {
   transform: translateX(0);
 }
 
-/* || Link styles */
-
+/* Links */
 a {
   color: #ff6600; /* Orange fluo */
 }
 
 a:hover,
 a:focus {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
+/* Button Hover Effects */
+button:hover,
+button:focus,
+.mute:hover {
+  background-color: #00aaff; /* Bleu plus foncé */
+  color: #000;
+}
+
+/* Media Queries */
 @media (min-width: 481px) {
-  /*CSS for medium width screens*/
-
-  /* || Basic layout changes for the main control buttons */
+  /* CSS for medium width screens */
 }
 
-@media all and (min-width: 800px) {
-  /*CSS for wide screens*/
-
-  h1 {
-    font-size: 5rem;
-    padding-top: 2.5rem;
-  }
-
-  aside {
-    top: 0;
-    left: 100%;
-    text-shadow: 1px 1px 1px black;
-    width: 480px;
-    transform: translateX(0);
-    border-left: 2px solid #ff6600; /* Orange fluo */
-  }
-
-  /* Toggled State of information box */
-
-  input[type="checkbox"]:checked ~ aside {
-    transform: translateX(-480px);
-  }
+@media (min-width: 800px) {
+  /* CSS for wide screens */
 }
 
 @media (min-width: 1100px) {
-  /*CSS for really wide screens*/
+  /* CSS for really wide screens */
 }
